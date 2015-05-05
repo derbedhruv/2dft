@@ -1,7 +1,8 @@
 # view the ft of an image
-import numpy, pylab, matplotlib.cm, Image
+import numpy, pylab, matplotlib.cm as cm, Image
+from scipy.misc import toimage
 
-fileName = "./images/40_python.jpg"
+fileName = "./images/40.jpg"
 
 image = Image.open(fileName).convert("L")
 
@@ -9,7 +10,7 @@ im = numpy.array(image, dtype=numpy.uint8)
 f = numpy.fft.fftshift(numpy.fft.fft2(im))
 p = numpy.abs(f)
 
-psd = Image.fromarray(p)
+psd = toimage(p, mode='P')
 
 pylab.figure()
 pylab.imshow(psd)
