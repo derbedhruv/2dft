@@ -21,10 +21,10 @@ im = Image.fromarray(image)
 # im.save(fileName)
 
 pylab.figure()
-pylab.imshow(im,  cmap = cm.Greys_r)
+pylab.imshow(im,  cmap = cm.Greys_r)	# display the image
 
 pylab.figure()
-pylab.imshow(psd, cmap = cm.Greys_r)
+pylab.imshow(psd, cmap = cm.Greys_r)	# display the FT of the image
 
 pylab.show()
 
